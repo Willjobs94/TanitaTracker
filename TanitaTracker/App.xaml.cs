@@ -9,13 +9,6 @@ namespace TanitaTracker
     public partial class App : PrismApplication
     {
 
-        public App()
-        {
-
-        }
-
-        public App(IPlatformInitializer initializer = null) : base(initializer) { }
-
         protected override void OnInitialized()
 		{
 			InitializeComponent();

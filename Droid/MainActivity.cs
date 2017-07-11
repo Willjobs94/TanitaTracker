@@ -19,16 +19,7 @@ namespace TanitaTracker.Droid
             global::Xamarin.Forms.Forms.Init(this, bundle);
 
 
-            LoadApplication(new App(new AndroidInitializer()));
+            LoadApplication(new App());
         }
     }
-
-    public class AndroidInitializer : IPlatformInitializer
-    {
-        public void RegisterTypes(IUnityContainer container)
-        {
-
-        }
-    }
-
 }
