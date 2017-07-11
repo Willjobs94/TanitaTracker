@@ -1,12 +1,8 @@
-﻿using System;
-
-using Android.App;
-using Android.Content;
+﻿using Android.App;
 using Android.Content.PM;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using Android.OS;
+using Prism.Unity;
+using Microsoft.Practices.Unity;
 
 namespace TanitaTracker.Droid
 {
@@ -22,7 +18,17 @@ namespace TanitaTracker.Droid
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
 
-            LoadApplication(new App());
+
+            LoadApplication(new App(new AndroidInitializer()));
         }
     }
+
+    public class AndroidInitializer : IPlatformInitializer
+    {
+        public void RegisterTypes(IUnityContainer container)
+        {
+
+        }
+    }
+
 }
