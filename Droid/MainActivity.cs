@@ -24,10 +24,5 @@ namespace TanitaTracker.Droid
 
             LoadApplication(new App());
         }
-
-        protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
-        {
-            base.OnActivityResult(requestCode, resultCode, data);
-        }
     }
 }

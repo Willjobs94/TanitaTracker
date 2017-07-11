@@ -1,61 +1,29 @@
-﻿using System.Collections.Generic;
-
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace TanitaTracker
 {
     public partial class App : Application
     {
-        public static bool UseMockDataStore = true;
-        public static string BackendUrl = "https://localhost:5000";
-
-        public static IDictionary<string, string> LoginParameters => null;
-
         public App()
         {
             InitializeComponent();
 
-            if (UseMockDataStore)
-                DependencyService.Register<MockDataStore>();
-            else
-                DependencyService.Register<CloudDataStore>();
-
-            SetMainPage();
+            MainPage = new TanitaTrackerPage();
         }
 
-        public static void SetMainPage()
+        protected override void OnStart()
         {
-            if (!UseMockDataStore && !Settings.IsLoggedIn)
-            {
-                Current.MainPage = new NavigationPage(new LoginPage())
-                {
-                    BarBackgroundColor = (Color)Current.Resources["Primary"],
-                    BarTextColor = Color.White
-                };
-            }
-            else
-            {
-                GoToMainPage();
-            }
+            // Handle when your app starts
         }
 
-        public static void GoToMainPage()
+        protected override void OnSleep()
         {
-            Current.MainPage = new TabbedPage
-            {
-                Children = {
-                    new NavigationPage(new ItemsPage())
-                    {
-                        Title = "Browse",
-                        Icon = Device.OnPlatform("tab_feed.png", null, null)
-                    },
-                    new NavigationPage(new AboutPage())
-                    {
-                        Title = "About",
-                        Icon = Device.OnPlatform("tab_about.png", null, null)
-                    },
-                }
-            };
+            // Handle when your app sleeps
+        }
+
+        protected override void OnResume()
+        {
+            // Handle when your app resumes
         }
     }
 }
