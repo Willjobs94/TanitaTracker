@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+    x:Class="TanitaTracker.Views.Tabs.RegisterUserTabPage"
+    Title="Register User">
+    <StackLayout
+        Padding="0,30,0,0"
+        VerticalOptions="StartAndExpand"
+        Spacing="20"
+        Margin="15">
+        <Label
+            HorizontalTextAlignment="Center"
+            Text="Create User"
+            FontSize="40" />
+
+        <Entry
+            HeightRequest="50"
+            Placeholder="Name"
+            VerticalOptions="StartAndExpand"
+            Text="{Binding Name}"
+            FontSize="40" />
+
+        <Entry
+            HeightRequest="50"
+            Placeholder="Age"
+            Text="{Binding Age}"
+            FontSize="40" />
+
+        <StackLayout
+            Orientation="Horizontal">
+            <Label
+                HeightRequest="50"
+                Text="Sex"
+                FontSize="40"
+                HorizontalOptions="StartAndExpand" />
+
+            <Picker
+                ItemsSource="{Binding Sexs}"
+                SelectedItem="{Binding SelectedSex}" />
+
+        </StackLayout>
+
+        <StackLayout
+            Orientation="Horizontal">
+            <Label
+                HeightRequest="50"
+                Text="Height"
+                FontSize="40"
+                HorizontalOptions="StartAndExpand" />
+
+            <Picker
+                ItemsSource="{Binding Height}"
+                SelectedItem="{Binding SelectedHeight}" />
+
+        </StackLayout>
+
+        <StackLayout
+            Orientation="Horizontal">
+            <Label
+                HeightRequest="50"
+                Text="Birthday"
+                FontSize="40"
+                HorizontalOptions="StartAndExpand" />
+
+            <DatePicker />
+
+        </StackLayout>
+
+        <Button
+            Margin="0,50"
+            VerticalOptions="EndAndExpand"
+            Text="Create User" Command="{Binding CreateUserCommand}"
+            FontSize="30" />
+
+    </StackLayout>
+
+</ContentPage>

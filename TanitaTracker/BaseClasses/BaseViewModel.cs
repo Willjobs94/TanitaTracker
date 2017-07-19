@@ -1,10 +1,8 @@
-﻿using System;
-using Prism;
-using Prism.Mvvm;
+﻿using Prism.Mvvm;
 
 namespace TanitaTracker.BaseClasses
 {
-		public class BaseViewModel : BindableBase
+    public class BaseViewModel : BindableBase
 		{
 			public string Title
 			{

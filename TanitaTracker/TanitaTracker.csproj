@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -32,20 +32,23 @@
     <EmbeddedResource Include="Views\MainTabbedPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\RegisterUserPage.xaml" />
+    <EmbeddedResource Include="Views\Tabs\RegisterUser\RegisterUserTabPage.xaml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="BaseClasses\BaseViewModel.cs" />
+    <Compile Include="Converters\DecimalValueConverter.cs" />
+    <Compile Include="Converters\HeightCMToFeetConverter.cs" />
     <Compile Include="Views\MainTabbedPage.xaml.cs">
       <DependentUpon>MainTabbedPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="BaseClasses\BaseViewModel.cs" />
-    <Compile Include="Views\RegisterUserPage.xaml.cs">
-      <DependentUpon>RegisterUserPage.xaml</DependentUpon>
+    <Compile Include="Views\Tabs\RegisterUser\RegisterUserTabPage.xaml.cs">
+      <DependentUpon>RegisterUserTabPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Tabs\RegisterUser\RegisterUserTabPageViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Practices.ServiceLocation">
@@ -81,6 +84,12 @@
     <Reference Include="Xamarin.Forms.Xaml">
       <HintPath>..\packages\Xamarin.Forms.2.3.4.247\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Xaml.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\netstandard1.1\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+    </Reference>
+    <Reference Include="UnitsNet">
+      <HintPath>..\packages\UnitsNet.3.66.0\lib\netstandard1.0\UnitsNet.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -88,6 +97,8 @@
   <ItemGroup>
     <Folder Include="Views\" />
     <Folder Include="BaseClasses\" />
+    <Folder Include="Converters\" />
+    <Folder Include="Views\Tabs\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />

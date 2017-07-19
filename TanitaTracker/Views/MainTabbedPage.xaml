@@ -3,14 +3,14 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
-    xmlns:views="clr-namespace:TanitaTracker.Views;assembly=TanitaTracker"
+    xmlns:tabs="clr-namespace:TanitaTracker.Views.Tabs;assembly=TanitaTracker"
     prism:ViewModelLocator.AutowireViewModel="True"
     x:Class="TanitaTracker.Views.MainTabbedPage">
     <NavigationPage
         Title="Register User"
         Icon="register_user">
         <x:Arguments>
-            <views:RegisterUserPage />
+            <tabs:RegisterUserTabPage/>
 
         </x:Arguments>
 
@@ -20,7 +20,7 @@
         Title="Register User"
         Icon="register_user">
         <x:Arguments>
-            <views:RegisterUserPage />
+            <tabs:RegisterUserTabPage />
 
         </x:Arguments>
 
@@ -30,8 +30,7 @@
         Title="Register User"
         Icon="register_user">
         <x:Arguments>
-            <views:RegisterUserPage />
-
+            <tabs:RegisterUserTabPage />
         </x:Arguments>
 
     </NavigationPage>
